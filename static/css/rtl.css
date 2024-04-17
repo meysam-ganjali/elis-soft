@@ -1,0 +1,196 @@
+/* Template Name: Softland - Landing Page Template
+   Author: AliNiyazi
+   Version: 1.0.0
+   File Description: Main Css file of the template
+*/
+/* @font-face {
+    font-family: 'IRY';
+    src: url('../fonts/IRY-Light.eot');
+    src: url('../fonts/IRY-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/IRY-Light.woff2') format('woff2'),
+    url('../fonts/IRY-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRY';
+    src: url('../fonts/IRY-Medium.eot');
+    src: url('../fonts/IRY-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/IRY-Medium.woff2') format('woff2'),
+    url('../fonts/IRY-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRY';
+    src: url('../fonts/IRY-Thin.eot');
+    src: url('../fonts/IRY-Thin.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/IRY-Thin.woff2') format('woff2'),
+    url('../fonts/IRY-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRY';
+    src: url('../fonts/IRY-Bold.eot');
+    src: url('../fonts/IRY-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/IRY-Bold.woff2') format('woff2'),
+    url('../fonts/IRY-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRY';
+    src: url('../fonts/IRY.eot');
+    src: url('../fonts/IRY.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/IRY.woff2') format('woff2'),
+    url('../fonts/IRY.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+/**/
+body{
+    direction: rtl;
+    font-family: 'IRY';
+    letter-spacing: 0!important;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'IRY';
+}
+/*Style*/
+.navbar-brand {
+    margin-right: initial;
+    margin-left: 1rem;
+}
+.navbar-nav {
+    padding-left: initial;
+    padding-right: 0;
+}
+.me-3 {
+    margin-right: initial!important;
+    margin-left: 1rem!important;
+}
+.ms-3 {
+    margin-left: initial!important;
+    margin-right: 1rem!important;
+}
+.ms-2 {
+    margin-left: initial!important;
+    margin-right: 0.5rem!important;
+}
+.mdi-arrow-right:before {
+    content: "\F04D";
+}
+.service-active:before {
+    left: initial;
+    right: 0;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(8deg);
+
+}
+.service-box:hover:before {
+    left: initial;
+    right: 0;
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+}
+
+.ps-4 {
+    padding-left: initial!important;
+    padding-right: 1.5rem!important;
+}
+.form-control {
+    padding-left: initial;
+    padding-right: 20px;
+
+}
+.me-2 {
+    margin-right: initial!important;
+    margin-left: 0.5rem!important;
+}
+.pricing-box .pricing-badge .badge {
+    float: left;
+    transform: rotate(-45deg);
+    right: initial;
+    left: -67px;
+
+}
+.client-box .client-img img {
+    margin-left: initial;
+    margin-right: -80px;
+}
+.carousel-indicators {
+    left: -50px;
+    right: initial;
+}
+.list-inline {
+    padding-left: initial;
+    padding-right: 0;
+}
+.list-inline-item:not(:last-child) {
+    margin-right: initial;
+    margin-left: 0.5rem;
+}
+.blog-content {
+    left: initial;
+    right: -110px;
+}
+.ps-3 {
+    padding-left: initial!important;
+    padding-right: 1rem!important;
+}
+.footer-email input {
+    padding-right: initial;
+    padding-left: 80px;
+}
+.footer-email button {
+
+    right: initial;
+    left: 8px;
+
+}
+.list-unstyled {
+    padding-left: initial;
+    padding-right: 0;
+}
+.search-form input {
+    padding-right: 30px;
+    padding-left: 160px;
+
+}
+.search-form button {
+    right: initial;
+    left: 7px;
+}
+/*Responsive*/
+
+
+@media (min-width: 992px) {
+    .offset-lg-1 {
+        margin-left: initial;
+        margin-right: 8.33333333%;
+    }
+}
+@media (min-width: 200px) and (max-width: 1024px) {
+    .carousel-indicators {
+        right: initial;
+        left: 0;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 1024px) {
+    .blog-content {
+        left: initial;
+        right: 0;
+    }
+}
+@media (max-width: 445px) {
+    .client-box .client-img img {
+        margin-left: initial;
+        margin-right: -60px;
+    }
+}

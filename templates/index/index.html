@@ -1,10 +1,519 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>الی سافت-خانه</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Softland website template with Bootstrap 4">
+    <meta name="keywords" content="bootstrap 4, premium, marketing, multipurpose">
+    <meta content="AliNiyazi" name="author">
+    <!-- css -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/rtl.css' %}" rel="stylesheet" type="text/css">
 </head>
+
 <body>
+<section id="ViewAnimation"></section>
+<section class="bg-home-6 section bg-lightan active" id="home">
+    <div class="bg-overlay-black"></div>
+    <div class="home-center">
+        <div class="home-desc-center">
+            <div class="container slidero">
+                <div class="row justify-content-center pt-5 mt-5">
+                    <div>
+                        <div class="text-center headerTitle">
+                            <h1 class="home-title text-white text-center mb-4 font-Sahel">
+                                تخصص ما ساخت شغل از ایده هاست
+                            </h1>
+                            <span class="d-inline-block px-3">
+                                    با فرم دهی به ایده شما و اضافه کردن ابزار های برنامه نویسی و مدیریت کسب و کار،
+                                    <br> <strong>
+                                        شغلی
+                                        حرفه ای برای شما طراحی می کنیم
+                                    </strong>
+                                </span>
+                        </div>
+                        <form action="{% url 'main:index' %}" method="post">
+                            {% csrf_token %}
+                            <section class="row align-items-center">
+                                <h3 class="home-desc mt-5 mt-md-0 mb-3 col-12 col-md-5 text-white">
+                                    برای مشاوره رایگان نام و تلفن خود را بگذارید
+                                </h3>
+                                <div class="col-6 col-md-3 mx-auto">
+                                    {{ counseling_form.name }}
+                                </div>
+                                <div class="col-6 col-md-3 mx-auto">
+                                    {{ counseling_form.phone }}
+                                </div>
+                                <div class="col-3 col-md-1 mx-auto">
+                                    <input id="btn_info" type="submit" value="ثبت"
+                                           class="form-control text-white pe-0 btn btn-danger font-size-24 rounded-2">
+                                </div>
+                            </section>
+                            <script>
+                                $(document).ready(function () {
+                                    $("#btn_info").submit(function (event) {
+                                        var name = document.getElementById('txt_name').value;
+                                        var phone = document.getElementById('txt_phone').value;
+                                        event.preventDefault();
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "{% url 'main:index' %}",
+                                            data: {
+                                                'name': name,
+                                                'phone': phone// from form
+                                            },
+                                            success:  (data)=> {
+                                                Swal.fire({
+                                                    position: "top-end",
+                                                    icon: "success",
+                                                    title: 'sdfsdfsdf',
+                                                    showConfirmButton: false,
+                                                    timer: 1500
+                                                });
+                                            },
+                                            error:(data)=>{
+                                                 Swal.fire({
+                                                    position: "top-end",
+                                                    icon: "error",
+                                                    title: 'sdfsdfsdf',
+                                                    showConfirmButton: false,
+                                                    timer: 1500
+                                                });
+                                            }
+                                        });
+                                        return false;
+                                    });
+                                });
+                            </script>
+                        </form>
+                        <div class="mt-md-5 pt-md-4 justify-content-around row">
+                            <!-- <a href="CategoryCourses.html"
+                                class="text-white cartCustom col-3 col-sm-3 my-2 pt-3 d-flex flex-column justify-content-start align-items-center"
+                                style="background: linear-gradient(to right, rgb(255 181 53 / 66%), rgba(242, 41, 91, 0.66));box-shadow: 0 0 20px 3px #a15c48;">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="color: #fff;"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5">
+                                    </path>
+                                </svg>
+                                دوره های امورشی
+                            </a> -->
+                            <!-- <a href="#"
+                                class="text-white cartCustom col-3 col-sm-3 my-2 pt-3 d-flex flex-column justify-content-start align-items-center"
+                                style="font-family: 'Tahoma';background-image: linear-gradient(to right,rgb(48 196 229 / 66%),rgb(39 229 92 / 66%));box-shadow: 0 0 20px 3px #2a8d76;">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="color: #fff;"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 01-.657.643 48.39 48.39 0 01-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 01-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 00-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 01-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 00.657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 01-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 005.427-.63 48.05 48.05 0 00.582-4.717.532.532 0 00-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 00.658-.663 48.422 48.422 0 00-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 01-.61-.58v0z">
+                                    </path>
+                                </svg>
+                                نمونه کارها
+                            </a> -->
+                            <!-- <a href="#"
+                                class="text-white cartCustom text-center col-3 col-sm-3 my-2 pt-3 d-flex flex-column justify-content-start align-items-center"
+                                style="background-image: linear-gradient(to right,rgb(43 159 255 / 66%),rgb(156 51 247 / 66%));box-shadow: 0 0 20px 3px #525bb3;">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="color: #fff;"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z">
+                                    </path>
+                                </svg>
+                                کلاس های برنامه نویسی حضوری
+                            </a> -->
+                            <h1 class="text-center pt-3 text-light title-body">
+                                <strong class="d-inline-block pt-1 mt-1 font-IranianSans">ما می توانیم کسب و کار
+                                    ضعیفتان را تقویت
+                                    کنیم</strong>
+                            </h1>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--END HOME-->
+<!-- send mail -->
+<!-- <section class="position-fixed top-50 start-0 informationBox ">
+    mai Logo
+    <section>
+        <button class="btn bg-transparent btnInformation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60px" height="60px" viewBox="0 0 24 24"
+                style="background: transparent;" fill="none">
+                <path
+                    d="M11.224 6.63627C11.7213 6.45458 12.2787 6.45458 12.776 6.63627L15.1179 7.49181C15.6274 7.67791 15.6274 8.3221 15.1179 8.5082L12.776 9.36373C12.2787 9.54542 11.7213 9.54542 11.224 9.36373L8.88206 8.50819C8.37265 8.32209 8.37265 7.6779 8.88206 7.4918L11.224 6.63627Z"
+                    stroke="#fff" stroke-width="1.1" />
+                <path
+                    d="M14.5 9V11.7002C14.5 12.0891 14.2746 12.4439 13.9097 12.5785C13.3965 12.7679 12.6375 13 12 13C11.3625 13 10.6035 12.7679 10.0903 12.5785C9.72542 12.4439 9.5 12.0891 9.5 11.7002V9"
+                    stroke="#fff" stroke-width="1.1" stroke-linecap="round" />
+                <path
+                    d="M5 15.2161C4.35254 13.5622 4 11.8013 4 10.1433C4 5.64588 7.58172 2 12 2C16.4183 2 20 5.64588 20 10.1433C20 14.6055 17.4467 19.8124 13.4629 21.6744C12.5343 22.1085 11.4657 22.1085 10.5371 21.6744C9.26474 21.0797 8.13831 20.1439 7.19438 19"
+                    stroke="#fff" stroke-width="1.1" stroke-linecap="round" />
+            </svg>
+        </button>
+    </section>
+    mai form
+    <section class="position-absolute">
+        <h4 class="title d-flex align-items-center justify-content-between ps-1">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
+                <linearGradient id="NvW_RwTAona1rlOp72mkqa_7rhqrO588QcU_gr1" x1="24" x2="24" y1="42" y2="6.207"
+                    gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#1ac8fc"></stop>
+                    <stop offset=".258" stop-color="#1bb6fa"></stop>
+                    <stop offset=".775" stop-color="#1c86f5"></stop>
+                    <stop offset="1" stop-color="#1d70f2"></stop>
+                </linearGradient>
+                <path fill="url(#NvW_RwTAona1rlOp72mkqa_7rhqrO588QcU_gr1)"
+                    d="M34,42H14c-4.411,0-8-3.589-8-8V14c0-4.411,3.589-8,8-8h20c4.411,0,8,3.589,8,8v20 C42,38.411,38.411,42,34,42z">
+                </path>
+                <path
+                    d="M34,16c0.178,0,0.347,0.031,0.512,0.074l-7.824,7.825C25.946,24.64,24.973,25.01,24,25.01 s-1.946-0.37-2.688-1.111l-7.824-7.825C13.653,16.031,13.822,16,14,16H34 M35.926,17.488C35.969,17.653,36,17.822,36,18v12 c0,0.178-0.031,0.347-0.074,0.512L29.414,24L35.926,17.488 M12.074,17.488L18.586,24l-6.511,6.511C12.031,30.347,12,30.178,12,30 V18C12,17.822,12.031,17.653,12.074,17.488 M27.99,25.404l6.522,6.522C34.347,31.969,34.178,32,34,32H14 c-0.178,0-0.347-0.031-0.512-0.074l6.522-6.522c1.117,1.063,2.55,1.605,3.99,1.605S26.873,26.467,27.99,25.404 M34,15H14 c-0.244,0-0.495,0.035-0.768,0.108c-0.346,0.092-0.616,0.361-0.709,0.707c-0.092,0.341,0.003,0.704,0.248,0.956 c-0.189-0.183-0.44-0.283-0.697-0.283c-0.087,0-0.174,0.011-0.26,0.034c-0.345,0.093-0.615,0.363-0.707,0.709 C11.035,17.505,11,17.756,11,18v12c0,0.244,0.035,0.495,0.108,0.768c0.092,0.346,0.361,0.616,0.707,0.709 c0.086,0.023,0.173,0.034,0.26,0.034c0.257,0,0.508-0.099,0.696-0.282c-0.245,0.253-0.34,0.616-0.248,0.956 c0.093,0.345,0.363,0.615,0.709,0.707C13.505,32.965,13.756,33,14,33h20c0.244,0,0.495-0.035,0.768-0.108 c0.346-0.092,0.616-0.361,0.709-0.707c0.092-0.341-0.003-0.704-0.248-0.956c0.189,0.183,0.44,0.282,0.696,0.282 c0.087,0,0.174-0.011,0.26-0.034c0.345-0.093,0.615-0.363,0.707-0.709C36.965,30.495,37,30.244,37,30V18 c0-0.244-0.035-0.495-0.108-0.768c-0.092-0.346-0.361-0.616-0.707-0.709c-0.086-0.023-0.173-0.034-0.26-0.034 c-0.257,0-0.508,0.099-0.697,0.282c0.245-0.253,0.34-0.616,0.248-0.956c-0.093-0.345-0.363-0.615-0.709-0.707 C34.495,15.035,34.244,15,34,15L34,15z"
+                    opacity=".05"></path>
+                <path
+                    d="M34,15.5H14c-0.203,0-0.406,0.029-0.64,0.091c-0.173,0.046-0.308,0.181-0.354,0.353 c-0.046,0.173,0.003,0.357,0.129,0.483l7.824,7.825C21.77,25.063,22.85,25.51,24,25.51s2.23-0.447,3.041-1.257l7.824-7.825 c0.126-0.126,0.176-0.311,0.129-0.483c-0.046-0.173-0.182-0.307-0.354-0.353C34.406,15.529,34.203,15.5,34,15.5L34,15.5z M35.926,16.988c-0.131,0-0.259,0.051-0.354,0.146l-6.511,6.512c-0.195,0.195-0.195,0.512,0,0.707l6.511,6.511 c0.095,0.095,0.223,0.146,0.354,0.146c0.043,0,0.087-0.006,0.13-0.017c0.173-0.046,0.307-0.182,0.353-0.354 C36.471,30.406,36.5,30.203,36.5,30V18c0-0.203-0.029-0.406-0.091-0.64c-0.046-0.173-0.181-0.308-0.353-0.354 C36.013,16.994,35.969,16.988,35.926,16.988L35.926,16.988z M12.074,16.988c-0.043,0-0.087,0.006-0.13,0.017 c-0.173,0.046-0.307,0.182-0.353,0.354C11.529,17.594,11.5,17.797,11.5,18v12c0,0.203,0.029,0.406,0.091,0.64 c0.046,0.173,0.181,0.308,0.353,0.354c0.043,0.012,0.087,0.017,0.13,0.017c0.131,0,0.259-0.051,0.354-0.146l6.511-6.511 c0.195-0.195,0.195-0.512,0-0.707l-6.511-6.512C12.333,17.04,12.205,16.988,12.074,16.988L12.074,16.988z M27.99,24.904 c-0.124,0-0.248,0.046-0.345,0.138c-0.995,0.946-2.289,1.467-3.645,1.467s-2.651-0.521-3.645-1.467 c-0.097-0.092-0.221-0.138-0.345-0.138c-0.128,0-0.256,0.049-0.354,0.146l-6.522,6.522c-0.126,0.126-0.176,0.311-0.129,0.483 s0.182,0.307,0.354,0.353C13.594,32.471,13.797,32.5,14,32.5h20c0.203,0,0.406-0.029,0.64-0.091 c0.173-0.046,0.308-0.181,0.354-0.353s-0.003-0.357-0.129-0.483l-6.522-6.522C28.246,24.953,28.118,24.904,27.99,24.904 L27.99,24.904z"
+                    opacity=".07"></path>
+                <path fill="#f9f9f9"
+                    d="M35.926,17.488L29.414,24l6.511,6.511C35.969,30.347,36,30.178,36,30V18 C36,17.822,35.969,17.653,35.926,17.488z M26.688,23.899l7.824-7.825C34.347,16.031,34.178,16,34,16H14 c-0.178,0-0.347,0.031-0.512,0.074l7.824,7.825C22.795,25.38,25.205,25.38,26.688,23.899z M12.074,17.488 C12.031,17.653,12,17.822,12,18v12c0,0.178,0.031,0.347,0.074,0.512L18.586,24L12.074,17.488z M24,27.009 c-1.44,0-2.873-0.542-3.99-1.605l-6.522,6.522C13.653,31.969,13.822,32,14,32h20c0.178,0,0.347-0.031,0.512-0.074l-6.522-6.522 C26.873,26.467,25.44,27.009,24,27.009z">
+                </path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="closeInformationBox"
+                style="background-color: #ffffff29;border-radius: 7px;padding: 5px;" x="0px" y="0px" width="40"
+                height="35" viewBox="0 0 48 48">
+                <linearGradient id="hbE9Evnj3wAjjA2RX0We2a_OZuepOQd0omj_gr1" x1="7.534" x2="27.557" y1="7.534"
+                    y2="27.557" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#f44f5a"></stop>
+                    <stop offset=".443" stop-color="#ee3d4a"></stop>
+                    <stop offset="1" stop-color="#e52030"></stop>
+                </linearGradient>
+                <path fill="url(#hbE9Evnj3wAjjA2RX0We2a_OZuepOQd0omj_gr1)"
+                    d="M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774,0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019,4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z">
+                </path>
+                <linearGradient id="hbE9Evnj3wAjjA2RX0We2b_OZuepOQd0omj_gr2" x1="27.373" x2="40.507" y1="27.373"
+                    y2="40.507" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#a8142e"></stop>
+                    <stop offset=".179" stop-color="#ba1632"></stop>
+                    <stop offset=".243" stop-color="#c21734"></stop>
+                </linearGradient>
+                <path fill="url(#hbE9Evnj3wAjjA2RX0We2b_OZuepOQd0omj_gr2)"
+                    d="M24,30.821L35.599,42.42c0.774,0.774,2.028,0.774,2.802,0l4.019-4.019	c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z">
+                </path>
+            </svg>
+        </h4>
+        <form action="#" method="post" class="p-3">
+            <input type="text" class="form-control mt-1 placeholder-white text-white rounded-2"
+                style="background-color: #ffffff80;" placeholder="نام">
+            <textarea placeholder="متن ایمیل خود را وارد کنید" name="text" style="background-color: #ffffff80;"
+                class="w-100 form-control text-white rounded-2 placeholder-white" rows="8"></textarea>
+            <button class="btn btn-danger">ارسال</button>
+        </form>
+
+    </section>
+</section> -->
+<!-- Footer -->
+<footer class="position-fixed bottom-0 end-0 w-100 row" style="z-index: 100;">
+    <section class="col-12 d-flex flex-column-reverse flex-md-row align-items-center me-md-5 pb-1 pb-md-0">
+        <!-- Map -->
+        <section class="map d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round"
+                 stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 48 48" id="map-and-location">
+                <path fill="#66bb6a"
+                      d="M39.259,19.768c-0.108,-0.45 -0.51,-0.768 -0.973,-0.768l-28.572,0c-0.463,0 -0.865,0.318 -0.973,0.768l-5.714,24c-0.071,0.298 -0.001,0.612 0.188,0.852c0.19,0.24 0.479,0.38 0.785,0.38l40,0c0.306,0 0.595,-0.14 0.785,-0.38c0.189,-0.24 0.259,-0.554 0.188,-0.852l-5.714,-24Z"/>
+                <path fill="#ef5350"
+                      d="M31.211,10.844c-0.003,-5.024 -3.861,-8.109 -7.21,-8.111c-3.35,-0.002 -7.215,3.089 -7.212,8.113c0.001,2.086 1.04,4.803 2.321,7.299c1.85,3.604 4.163,6.754 4.163,6.754c0.169,0.231 0.439,0.368 0.726,0.368c0.287,0 0.557,-0.136 0.727,-0.368c0,0 2.314,-3.15 4.165,-6.754c1.283,-2.497 2.321,-5.214 2.32,-7.301Zm-7.211,-3.844c-1.656,0 -3,1.344 -3,3c0,1.656 1.344,3 3,3c1.656,0 3,-1.344 3,-3c0,-1.656 -1.344,-3 -3,-3Z"/>
+                <path fill="#ffee58"
+                      d="M32,31l-6.5,-6.5c-0.36,-0.334 -0.424,-0.879 -0.152,-1.287l2.32,-2.768c0.163,-0.245 0.427,-0.405 0.719,-0.439c0.293,-0.033 0.585,0.065 0.8,0.267l8.313,8.227l2.684,-0.949c0.261,-0.087 0.546,-0.062 0.788,0.067c0.242,0.13 0.42,0.354 0.493,0.619l0.575,4.094c0.128,0.47 -0.1,0.963 -0.54,1.169l-14.785,7.301l2.492,2.492c0.286,0.286 0.372,0.716 0.217,1.09c-0.155,0.373 -0.52,0.617 -0.924,0.617l-7,0c-0.256,0 -0.502,-0.098 -0.688,-0.274l-9.21,-8.726l-6.061,0c-0.307,0 -0.596,-0.141 -0.786,-0.382c-0.19,-0.241 -0.258,-0.556 -0.185,-0.854l1.458,-4c0.109,-0.448 0.511,-0.764 0.972,-0.764l7,0c0.26,0 0.509,0.101 0.695,0.281l6.711,6.494l10.594,-5.775Z"/>
+                <path fill="#8d6e63"
+                      d="M18.033,18c-1.162,-2.449 -2.032,-4.988 -2.033,-6.999c-0.003,-5.575 4.284,-9.003 8.001,-9.001c3.715,0.002 7.996,3.426 7.999,8.999c0.001,2.012 -0.869,4.552 -2.03,7.001l9.03,0c0.466,0 0.87,0.321 0.974,0.775l6,26c0.069,0.297 -0.002,0.609 -0.191,0.848c-0.19,0.238 -0.478,0.377 -0.783,0.377l-42,0c-0.305,0 -0.593,-0.139 -0.783,-0.377c-0.189,-0.239 -0.26,-0.551 -0.191,-0.848l6,-26c0.104,-0.454 0.508,-0.775 0.974,-0.775l9.033,0Zm-13.776,26l14.733,0l-7.388,-7l-5.73,0l-1.615,7Zm2.077,-9l5.666,0c0.256,0 0.502,0.098 0.688,0.274l9.21,8.726l6.188,0l-2.793,-2.793c-0.231,-0.23 -0.334,-0.559 -0.278,-0.88c0.056,-0.321 0.265,-0.594 0.561,-0.732l15.476,-7.255l-0.851,-3.686l-2.385,0.795c-0.349,0.116 -0.735,0.031 -1.003,-0.222l-8.52,-8.047c-0.62,1.078 -1.236,2.069 -1.775,2.901l6.662,6.186c0.237,0.22 0.353,0.541 0.312,0.862c-0.042,0.321 -0.236,0.602 -0.522,0.754l-11.267,6c-0.383,0.204 -0.853,0.137 -1.165,-0.164l-6.943,-6.719l-6.338,0l-0.923,4Zm21.381,5.801l3.199,3.199l12.829,0l-2.231,-9.667l-13.797,6.468Zm-19.996,-11.801l6.281,0c0.26,0 0.509,0.101 0.695,0.281l6.711,6.494l9.385,-4.998l-5.399,-5.013c-0.365,0.527 -0.586,0.828 -0.586,0.828c-0.189,0.257 -0.488,0.408 -0.806,0.408c-0.319,0 -0.618,-0.152 -0.806,-0.408c0,0 -2.19,-2.984 -4.143,-6.592l-9.255,0l-2.077,9Zm22.237,-9l7.796,7.362l1.998,-0.666l-1.546,-6.696l-8.248,0Zm-5.956,4.257c0.893,-1.308 2.373,-3.589 3.648,-6.072c1.265,-2.464 2.353,-5.125 2.352,-7.184c-0.003,-4.269 -3.155,-6.999 -6.001,-7.001c-2.845,-0.002 -6.002,2.732 -5.999,6.999c0.001,2.06 1.089,4.721 2.355,7.186c1.274,2.482 2.753,4.763 3.645,6.072Zm0,-18.257c-2.208,0 -4,1.792 -4,4c0,2.208 1.792,4 4,4c2.208,0 4,-1.792 4,-4c0,-2.208 -1.792,-4 -4,-4Zm0,2c1.104,0 2,0.896 2,2c0,1.104 -0.896,2 -2,2c-1.104,0 -2,-0.896 -2,-2c0,-1.104 0.896,-2 2,-2Z"/>
+            </svg>
+            <p class="d-flex align-items-center mb-0" style="font-size: 0.8em;"><strong> ملایر </strong> ابتدای
+                خیابان شهید رجایی ساختمان
+                پردیس
+                <strong> واحد 5 </strong>
+            </p>
+        </section>
+        <!-- Tel -->
+        <section class="tel d-flex align-items-center me-md-5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="telephone">
+                <path fill="#ff5345"
+                      d="M24 14.1v-3.6c0-.6-.4-1-1-1H12c-.6 0-1 .4-1 1v3.6c0 .9-.6 1.6-1.4 1.9l-.5.2c-.7.2-1.2.8-1.3 1.5l-1.3 6.5c-.2 1.2.7 2.4 2 2.4h18.1c1.3 0 2.2-1.2 2-2.4l-1.3-6.5c-.1-.7-.6-1.3-1.3-1.5l-.6-.2c-.8-.3-1.4-1.1-1.4-1.9z"/>
+                <circle cx="17.5" cy="17" r="2.5" fill="#db3a3a"/>
+                <path fill="#fff"
+                      d="M17.5 12.5c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5-2-4.5-4.5-4.5zm0 7c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5S20 15.6 20 17s-1.1 2.5-2.5 2.5z"/>
+                <path fill="#ea3f3b" d="M6.4 24.5c0 1.1.9 2 2 2h18.1c1.1 0 2-.9 2-2H6.4z"/>
+                <path fill="#ff5345"
+                      d="M27.1 7.3c-2-1.2-4.3-1.8-6.6-1.8h-5.9c-2.3 0-4.6.6-6.6 1.8-1.3.8-2 2.1-2 3.5v2.7c0 .6.4 1 1 1h3.2c.3 0 .6-.2.8-.4v-3.6c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v3.6c.2.3.5.4.8.4H28c.6 0 1-.4 1-1v-2.7c0-1.4-.7-2.7-1.9-3.5z"/>
+                <path fill="#ea3f3b"
+                      d="M6 11.5v2c0 .6.4 1 1 1h3.2c.3 0 .6-.2.8-.4v-2.6H6zm18 0v2.6c.2.3.5.4.8.4H28c.6 0 1-.4 1-1v-2h-5z"/>
+                <path fill="#40455a"
+                      d="M28.5 25h-22c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h22c.3 0 .5.2.5.5s-.2.5-.5.5zm-6-7.5h-2.1c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h2.1c.3 0 .5.2.5.5s-.2.5-.5.5zm2-5.5c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h4c.3 0 .5.2.5.5s-.2.5-.5.5h-4zm-14 0h-4c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h4c.3 0 .5.2.5.5s-.2.5-.5.5z"/>
+                <path fill="#40455a"
+                      d="M26.6 27H8.4c-.8 0-1.5-.3-1.9-.9-.5-.6-.7-1.4-.5-2.1l1.3-6.5c.2-.9.8-1.6 1.7-1.9l.5-.2c.6-.2 1-.8 1-1.4v-3.6c0-.7.7-1.4 1.5-1.4h11c.8 0 1.5.7 1.5 1.5v3.6c0 .6.4 1.2 1 1.4l.5.2c.8.3 1.5 1 1.7 1.9L29 24c.1.7 0 1.5-.5 2.1-.5.6-1.2.9-1.9.9zM12 10c-.3 0-.5.2-.5.5v3.6c0 1.1-.7 2-1.7 2.4l-.5.2c-.5.2-.9.6-1 1.1L7 24.2c-.1.4 0 .9.3 1.2s.7.6 1.1.6h18.1c.5 0 .9-.2 1.2-.5s.4-.8.3-1.2l-1.3-6.5c-.1-.5-.5-1-1-1.1l-.5-.2c-1-.3-1.7-1.3-1.7-2.4v-3.6c0-.3-.2-.5-.5-.5H12z"/>
+                <path fill="#40455a"
+                      d="M17.5 22c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5zm0-9c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z"/>
+                <path fill="#40455a"
+                      d="M17.5 20c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0-5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                <path fill="#40455a"
+                      d="M28 15h-3.2c-.5 0-1-.2-1.2-.7-.1-.1-.1-.2-.1-.3v-3.6c0-.3-.2-.5-.5-.5H12c-.3 0-.5.2-.5.5V14c0 .1 0 .2-.1.3-.3.4-.7.7-1.2.7H7c-.8 0-1.5-.7-1.5-1.5v-2.7c0-1.6.8-3.1 2.2-3.9C9.8 5.7 12.1 5 14.6 5h5.9c2.4 0 4.8.7 6.9 1.9 1.3.8 2.2 2.3 2.2 3.9v2.7c-.1.8-.8 1.5-1.6 1.5zm-3.5-1.1c.1.1.2.1.3.1H28c.3 0 .5-.2.5-.5v-2.7c0-1.2-.7-2.4-1.7-3C24.9 6.6 22.7 6 20.4 6h-5.9c-2.2 0-4.4.6-6.4 1.8-1 .6-1.7 1.8-1.7 3v2.7c.1.3.3.5.6.5h3.2c.1 0 .2 0 .3-.1v-3.4c0-.8.7-1.5 1.5-1.5h11c.8 0 1.5.7 1.5 1.5v3.4zM4 22c-.8 0-1.5-.7-1.5-1.5S3.2 19 4 19c.3 0 .5.2.5.5s-.2.5-.5.5-.5.2-.5.5.2.5.5.5.5.2.5.5-.2.5-.5.5z"/>
+                <path fill="#40455a"
+                      d="M4 24c-.8 0-1.5-.7-1.5-1.5S3.2 21 4 21c.3 0 .5.2.5.5s-.2.5-.5.5-.5.2-.5.5.2.5.5.5.5.2.5.5-.2.5-.5.5zm0-4c-.8 0-1.5-.7-1.5-1.5S3.2 17 4 17c.3 0 .5.2.5.5s-.2.5-.5.5-.5.2-.5.5.2.5.5.5.5.2.5.5-.2.5-.5.5z"/>
+                <path fill="#40455a"
+                      d="M4 18c-.8 0-1.5-.7-1.5-1.5S3.2 15 4 15c.3 0 .5.2.5.5s-.2.5-.5.5-.5.2-.5.5.2.5.5.5.5.2.5.5-.2.5-.5.5z"/>
+                <path fill="#40455a"
+                      d="M4 16c-.3 0-.5-.2-.5-.5v-1c0-.8.7-1.5 1.5-1.5h1c.3 0 .5.2.5.5s-.2.5-.5.5H5c-.3 0-.5.2-.5.5v1c0 .3-.2.5-.5.5z"/>
+            </svg>
+            08132231881
+        </section>
+    </section>
+    <!-- Gear
+    <section class="col-2 col-md-1 mt-2">
+        <button class="btn btnShowBoxSettubg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="animationGear" x="0px" y="0px" viewBox="0 0 48 48">
+                <rect width="8" height="8" x="20" y="4" fill="#3dd9eb"></rect>
+                <rect width="8" height="8" x="20" y="36" fill="#3dd9eb"></rect>
+                <rect width="8" height="8" x="36" y="20" fill="#3dd9eb"></rect>
+                <rect width="8" height="8" x="4" y="20" fill="#3dd9eb"></rect>
+                <rect width="8" height="8" x="31.3" y="31.3" fill="#3dd9eb"
+                    transform="rotate(-45.001 35.315 35.315)"></rect>
+                <rect width="8" height="8" x="8.7" y="8.7" fill="#3dd9eb" transform="rotate(-45.001 12.686 12.686)">
+                </rect>
+                <rect width="8" height="8" x="31.3" y="8.7" fill="#3dd9eb"
+                    transform="rotate(-45.001 35.313 12.686)"></rect>
+                <rect width="8" height="8" x="8.7" y="31.3" fill="#3dd9eb"
+                    transform="rotate(-45.001 12.685 35.313)"></rect>
+                <circle cx="24" cy="24" r="17" fill="#3dd9eb"></circle>
+                <circle cx="24" cy="24" r="14" fill="#7debf5"></circle>
+                <polygon fill="#3dd9eb"
+                    points="36.6,30.5 26,23 26,10 22,10 22,22.9 22,23 11.4,30.5 13.7,33.7 24,26.5 34.3,33.7">
+                </polygon>
+                <circle cx="24" cy="24" r="10" fill="#3dd9eb"></circle>
+                <path fill="#00b3d7"
+                    d="M26,23v-8.8C25.4,14,24.7,14,24,14s-1.4,0.1-2,0.2V23L14.9,28c0.5,1.3,1.3,2.4,2.3,3.3l6.8-4.8l6.9,4.9	c1-0.9,1.8-2,2.3-3.3L26,23z">
+                </path>
+                <circle cx="24" cy="24" r="5" fill="#7debf5"></circle>
+            </svg>
+        </button>
+        Box Setting
+        <section class="position-fixed d-none boxSetting d-flex flex-column justify-content-between Zindex-200">
+            <section class="boxSetting-close text-center">
+                <button class="btn mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="closeInformationBox" x="0px" y="0px" width="24"
+                        height="24" viewBox="0 0 48 48">
+                        <linearGradient id="hbE9Evnj3wAjjA2RX0We2a_OZuepOQd0omj_gr1" x1="7.534" x2="27.557"
+                            y1="7.534" y2="27.557" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#f44f5a"></stop>
+                            <stop offset=".443" stop-color="#ee3d4a"></stop>
+                            <stop offset="1" stop-color="#e52030"></stop>
+                        </linearGradient>
+                        <path fill="url(#hbE9Evnj3wAjjA2RX0We2a_OZuepOQd0omj_gr1)"
+                            d="M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774,0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019,4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z">
+                        </path>
+                        <linearGradient id="hbE9Evnj3wAjjA2RX0We2b_OZuepOQd0omj_gr2" x1="27.373" x2="40.507"
+                            y1="27.373" y2="40.507" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#a8142e"></stop>
+                            <stop offset=".179" stop-color="#ba1632"></stop>
+                            <stop offset=".243" stop-color="#c21734"></stop>
+                        </linearGradient>
+                        <path fill="url(#hbE9Evnj3wAjjA2RX0We2b_OZuepOQd0omj_gr2)"
+                            d="M24,30.821L35.599,42.42c0.774,0.774,2.028,0.774,2.802,0l4.019-4.019	c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z">
+                        </path>
+                    </svg>
+                </button>
+            </section>
+            <section class="boxSetting-text">
+                <section>
+                    <h4>
+                        بازی با عدد
+                    </h4>
+                    <label class="switch">
+                        <input type="checkbox" class="BGNumber" onchange="ChangeCookieSetting('BGNumber',this)">
+                        <div class="slider">
+                            <div class="circle">
+                                <svg class="cross" xml:space="preserve" style="enable-background:new 0 0 512 512"
+                                    viewBox="0 0 365.696 365.696" y="0" x="0" height="6" width="6"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path data-original="#000000" fill="currentColor"
+                                            d="M243.188 182.86 356.32 69.726c12.5-12.5 12.5-32.766 0-45.247L341.238 9.398c-12.504-12.503-32.77-12.503-45.25 0L182.86 122.528 69.727 9.374c-12.5-12.5-32.766-12.5-45.247 0L9.375 24.457c-12.5 12.504-12.5 32.77 0 45.25l113.152 113.152L9.398 295.99c-12.503 12.503-12.503 32.769 0 45.25L24.48 356.32c12.5 12.5 32.766 12.5 45.247 0l113.132-113.132L295.99 356.32c12.503 12.5 32.769 12.5 45.25 0l15.081-15.082c12.5-12.504 12.5-32.77 0-45.25zm0 0">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <svg class="checkmark" xml:space="preserve"
+                                    style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0"
+                                    height="10" width="10" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path class="" data-original="#000000" fill="currentColor"
+                                            d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </label>
+                </section>
+                <section>
+                    <h4>
+                        بازی با نوشته
+                    </h4>
+                    <label class="switch">
+                        <input type="checkbox" class="BGText" onchange="ChangeCookieSetting('BGText',this)">
+                        <div class="slider">
+                            <div class="circle">
+                                <svg class="cross" xml:space="preserve" style="enable-background:new 0 0 512 512"
+                                    viewBox="0 0 365.696 365.696" y="0" x="0" height="6" width="6"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path data-original="#000000" fill="currentColor"
+                                            d="M243.188 182.86 356.32 69.726c12.5-12.5 12.5-32.766 0-45.247L341.238 9.398c-12.504-12.503-32.77-12.503-45.25 0L182.86 122.528 69.727 9.374c-12.5-12.5-32.766-12.5-45.247 0L9.375 24.457c-12.5 12.504-12.5 32.77 0 45.25l113.152 113.152L9.398 295.99c-12.503 12.503-12.503 32.769 0 45.25L24.48 356.32c12.5 12.5 32.766 12.5 45.247 0l113.132-113.132L295.99 356.32c12.503 12.5 32.769 12.5 45.25 0l15.081-15.082c12.5-12.504 12.5-32.77 0-45.25zm0 0">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <svg class="checkmark" xml:space="preserve"
+                                    style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0"
+                                    height="10" width="10" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path class="" data-original="#000000" fill="currentColor"
+                                            d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </label>
+                </section>
+                <section>
+                    <h4>
+                        بازی با عدد و نوشته
+                    </h4>
+                    <label class="switch">
+                        <input type="checkbox" class="BGTN" onchange="ChangeCookieSetting('BGTN',this)">
+                        <div class="slider">
+                            <div class="circle">
+                                <svg class="cross" xml:space="preserve" style="enable-background:new 0 0 512 512"
+                                    viewBox="0 0 365.696 365.696" y="0" x="0" height="6" width="6"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path data-original="#000000" fill="currentColor"
+                                            d="M243.188 182.86 356.32 69.726c12.5-12.5 12.5-32.766 0-45.247L341.238 9.398c-12.504-12.503-32.77-12.503-45.25 0L182.86 122.528 69.727 9.374c-12.5-12.5-32.766-12.5-45.247 0L9.375 24.457c-12.5 12.504-12.5 32.77 0 45.25l113.152 113.152L9.398 295.99c-12.503 12.503-12.503 32.769 0 45.25L24.48 356.32c12.5 12.5 32.766 12.5 45.247 0l113.132-113.132L295.99 356.32c12.503 12.5 32.769 12.5 45.25 0l15.081-15.082c12.5-12.504 12.5-32.77 0-45.25zm0 0">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <svg class="checkmark" xml:space="preserve"
+                                    style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0"
+                                    height="10" width="10" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path class="" data-original="#000000" fill="currentColor"
+                                            d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </label>
+                </section>
+                <section>
+                    <h4 class="cursor-pointer" onclick="WindowUploadImage()">
+                        بازی با عکس خودم
+                    </h4>
+                    <label class="switch">
+                        <input type="checkbox" class="BGImage" onchange="ChangeCookieSetting('BGImage',this)">
+                        <div class="slider">
+                            <div class="circle">
+                                <svg class="cross" xml:space="preserve" style="enable-background:new 0 0 512 512"
+                                    viewBox="0 0 365.696 365.696" y="0" x="0" height="6" width="6"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path data-original="#000000" fill="currentColor"
+                                            d="M243.188 182.86 356.32 69.726c12.5-12.5 12.5-32.766 0-45.247L341.238 9.398c-12.504-12.503-32.77-12.503-45.25 0L182.86 122.528 69.727 9.374c-12.5-12.5-32.766-12.5-45.247 0L9.375 24.457c-12.5 12.504-12.5 32.77 0 45.25l113.152 113.152L9.398 295.99c-12.503 12.503-12.503 32.769 0 45.25L24.48 356.32c12.5 12.5 32.766 12.5 45.247 0l113.132-113.132L295.99 356.32c12.503 12.5 32.769 12.5 45.25 0l15.081-15.082c12.5-12.504 12.5-32.77 0-45.25zm0 0">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <svg class="checkmark" xml:space="preserve"
+                                    style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0"
+                                    height="10" width="10" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path class="" data-original="#000000" fill="currentColor"
+                                            d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </label>
+                </section>
+            </section>
+            <section class="boxSetting-title">
+                <h3 class="text-center w-100">
+                    تنظیمات صفحه
+                </h3>
+            </section>
+        </section>
+    </section> -->
+</footer>
+<!-- import Image (Background Image Animation) -->
+<section class="importImageInBGAnimation position-fixed start-0 top-0 w-100 h-100 d-flex flex-column opacity-0">
+    <section class="container-fluid row justify-content-around align-items-center">
+        <div class="input-div">
+            <input class="input" name="file" type="file" onchange="SetImageInPreview(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" stroke-linejoin="round"
+                 stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"
+                 class="icon">
+                <polyline points="16 16 12 12 8 16"></polyline>
+                <line y2="21" x2="12" y1="12" x1="12"></line>
+                <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path>
+                <polyline points="16 16 12 12 8 16"></polyline>
+            </svg>
+        </div>
+        <div>
+            <img src="" class="col-5 d-inline-block" id="preview" alt="PreviewImage" title="Preview">
+            <svg onclick="RemoveImageBG()" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100"
+                 height="100" viewBox="0 0 48 48">
+                <linearGradient id="hbE9Evnj3wAjjA2RX0We2a_OZuepOQd0omj_gr1" x1="7.534" x2="27.557" y1="7.534"
+                                y2="27.557" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#f44f5a"></stop>
+                    <stop offset=".443" stop-color="#ee3d4a"></stop>
+                    <stop offset="1" stop-color="#e52030"></stop>
+                </linearGradient>
+                <path fill="url(#hbE9Evnj3wAjjA2RX0We2a_OZuepOQd0omj_gr1)"
+                      d="M42.42,12.401c0.774-0.774,0.774-2.028,0-2.802L38.401,5.58c-0.774-0.774-2.028-0.774-2.802,0	L24,17.179L12.401,5.58c-0.774-0.774-2.028-0.774-2.802,0L5.58,9.599c-0.774,0.774-0.774,2.028,0,2.802L17.179,24L5.58,35.599	c-0.774,0.774-0.774,2.028,0,2.802l4.019,4.019c0.774,0.774,2.028,0.774,2.802,0L42.42,12.401z">
+                </path>
+                <linearGradient id="hbE9Evnj3wAjjA2RX0We2b_OZuepOQd0omj_gr2" x1="27.373" x2="40.507" y1="27.373"
+                                y2="40.507" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#a8142e"></stop>
+                    <stop offset=".179" stop-color="#ba1632"></stop>
+                    <stop offset=".243" stop-color="#c21734"></stop>
+                </linearGradient>
+                <path fill="url(#hbE9Evnj3wAjjA2RX0We2b_OZuepOQd0omj_gr2)"
+                      d="M24,30.821L35.599,42.42c0.774,0.774,2.028,0.774,2.802,0l4.019-4.019	c0.774-0.774,0.774-2.028,0-2.802L30.821,24L24,30.821z">
+                </path>
+            </svg>
+        </div>
+    </section>
+    <button class="btnCloseWindowUploadImage mt-4">
+        بستن پنجره
+    </button>
+</section>
+<!-- javascript -->
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{% static 'js/script.js' %}"></script>
 
 </body>
+
 </html>
