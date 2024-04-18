@@ -25,23 +25,16 @@
             <div>
                 <h1 class="programming_community_title"> انجمن ها </h1>
                 <section class="d-flex justify-content-around align-items-center flex-wrap ">
-                 
-                    <a href="{% url 'forum:question' %}" class="programming_community_box">
+                 {% for forum in forums %}
+                 	<a href="{% url 'forum:question' %}" class="programming_community_box">
                         <header>
-                            <img src="/media/py.jpg" width="70" height="70">
+                            <img src="/media/{{ forum.logo }}" alt="{{ forum.alt }}" title="{{ forum.title }}" width="70" height="70">
                         </header>
                         <main>
-                            <h3 class="programming_community_box_title"> پایتون </h3>
+                            <h3 class="programming_community_box_title"> {{ forum.title }} </h3>
                         </main>
                     </a>
-                    <a href="#" class="programming_community_box">
-                        <header>
-                             <img src="/media/flutt.png" width="70" height="70">
-                        </header>
-                        <main>
-                            <h3 class="programming_community_box_title"> فلاتر </h3>
-                        </main>
-                    </a>
+                 {% endfor %}
                 </section>
             </div>
         </div>
