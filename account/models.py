@@ -15,6 +15,7 @@ class CustomerUserManager(BaseUserManager):
             raise ValueError('طول کلمه عبور باید بیشتر یا مساوی 6 باشد')
 
         user.set_password(password)
+        user.is_active = True
         user.save(using=self._db)
         return user
 

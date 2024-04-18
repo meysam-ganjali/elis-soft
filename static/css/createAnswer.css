@@ -1,0 +1,9 @@
+.create_answer {
+  background-color: #d8d8d84a;
+  border: 2px solid #ffffff63;
+  padding: 20px;
+  border-radius: 24px;
+  backdrop-filter: blur(3px);
+  max-width: 650px;
+  margin: 0 auto;
+}

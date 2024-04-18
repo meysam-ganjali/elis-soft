@@ -5,13 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98c320dc-abe4-43d2-a976-25d859d1cbbd" name="Changes" comment="create Counseling">
+      <change afterPath="$PROJECT_DIR$/froum/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/HacAndSecurity.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/arrowDown.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/createAnswer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/detailsQuestions.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/forumQuestions.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/programmingCommunity.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/ConvertDataToHtml.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/account/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/froum/forum.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/partial/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/partial/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elisoftProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/elisoftProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elisoftProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/elisoftProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/froum/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/froum/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/froum/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/froum/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/AIranianSans.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/AIranianSans.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/AIranianSans.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/AIranianSans.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Roya-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/fonts/Roya.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -35,24 +66,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Django Server.elisoftProject.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Programing/Project/Web/elisoftProject/media&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Django Server.elisoftProject.executor": "Debug",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "F:/Programing/Project/Web/elisoftProject/media",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Programing\Project\Web\elisoftProject\media" />
@@ -107,7 +138,8 @@
       <workItem from="1713362948701" duration="694000" />
       <workItem from="1713363655436" duration="1715000" />
       <workItem from="1713365387484" duration="5219000" />
-      <workItem from="1713422192858" duration="6447000" />
+      <workItem from="1713422192858" duration="6685000" />
+      <workItem from="1713444882736" duration="6903000" />
     </task>
     <task id="LOCAL-00001" summary="create project">
       <option name="closed" value="true" />

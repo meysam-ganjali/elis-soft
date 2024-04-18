@@ -1,0 +1,41 @@
+.programming_community_section {
+  height: 100vh;
+  position: relative;
+}
+
+.programming_community_title {
+  position: absolute;
+  left: 50%;
+  top: -128%;
+  transform: translate(-50%, 0%);
+}
+
+.programming_community_box {
+  padding: 10px 20px;
+  background-color: #c7c1c14a;
+  border-radius: 24px;
+  border: 2px solid #d1cdcdc4;
+  backdrop-filter: blur(1px);
+  text-decoration: none;
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 0 10px #c7c1c14a, 0 0 15px #c7c1c14a;
+  margin: 5px ;
+}
+
+.programming_community_box:hover {
+  box-shadow: 0 0 15px #c7c1c14a, 0 0 20px #c7c1c14a, 0 0 25px #c7c1c14a;
+}
+
+.programming_community_box_icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  display: block;
+}
+
+.programming_community_box_title {
+  color: white;
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: -1px;
+}

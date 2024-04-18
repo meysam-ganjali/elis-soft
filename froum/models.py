@@ -28,6 +28,7 @@ class Froum(models.Model):
 class Question(models.Model):
     q = models.TextField(verbose_name='سوال')
     title = models.CharField(max_length=1000, verbose_name='عنوان سوال')
+    is_active = models.BooleanField(default=False, verbose_name='تاید / عدم تایید')
     user = models.ForeignKey(CustomerUser, on_delete=models.PROTECT, verbose_name='کاربر', related_name='question_user')
     froum = models.ForeignKey(Froum, on_delete=models.CASCADE, related_name='question_froum', verbose_name='انجمن')
 
@@ -41,8 +42,10 @@ class Question(models.Model):
 
 class Answer(models.Model):
     answer = models.TextField(verbose_name='جواب')
+    is_active = models.BooleanField(default=False, verbose_name='تاید / عدم تایید')
     user = models.ForeignKey(CustomerUser, on_delete=models.PROTECT, verbose_name='کاربر', related_name='user_answer')
-    question = models.ForeignKey(Question, on_delete=models.PROTECT, related_name='question_answer', verbose_name='سوال')
+    question = models.ForeignKey(Question, on_delete=models.PROTECT, related_name='question_answer',
+                                 verbose_name='سوال')
 
     class Meta:
         verbose_name = 'جواب'
