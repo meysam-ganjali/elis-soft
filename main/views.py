@@ -1,9 +1,11 @@
-from django.http import HttpResponse, JsonResponse
+import requests
+
 from django.shortcuts import render
 from django.views import View
 from django.conf import settings
 from account.forms import CounselingForm
 from account.models import Counseling
+from django.contrib import messages
 
 
 def media_url(request):
@@ -22,7 +24,16 @@ class IndexView(View):
         if counseling_form.is_valid():
             name = counseling_form.cleaned_data['name']
             phone = counseling_form.cleaned_data['phone']
-            Counseling.objects.create(name=name, phone=phone)
-            return JsonResponse({'message': 'اطلاعات شما با موفقیت ثبت شد. منتظر تماس مشاوران ما باشید.'})
-        else:
-            return JsonResponse({'message': 'اطلاعات ارسالی معتبر نیست. لطفا مقادیر معتبر وارد کنید'})
+            counseling_new = Counseling.objects.create(name=name, phone=phone)
+            data = {'bodyId': 210088, 'to': '09033310515', 'args': [str(counseling_new.name), str(counseling_new.phone)]}
+            response = requests.post('https://console.melipayamak.com/api/send/shared/f6e8bf7a927d4042abcb988afd893a58',
+                                     json=data)
+            messages.success(request, 'اطلاعات شما با موفقیت ثبت شد. منتظر تماس با مشاوران ما باشید')
+            return render(request, 'index/index.html', {
+                'counseling_form': counseling_form,
+            })
+
+        messages.error(request, 'اطلاعات ارسالی نامعتب میباشد. مقداری معتبر وارد کنید')
+        return render(request, 'index/index.html', {
+            'counseling_form': counseling_form
+        })

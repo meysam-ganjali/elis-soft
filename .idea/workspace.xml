@@ -4,50 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98c320dc-abe4-43d2-a976-25d859d1cbbd" name="Changes" comment="create project">
-      <change afterPath="$PROJECT_DIR$/account/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/account/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/image/bg-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/image/iconApprove.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/rtl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/AIranianSans.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/AIranianSans.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/AIranianSans.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/AIranianSans.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Mikhak-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Mikhak-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Mikhak-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Mikhak-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Roya-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Roya.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-Black.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-Black.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-Black.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-Bold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-Light.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-Light.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-SemiBold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-SemiBold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel-SemiBold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/fonts/Sahel.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/script.js" afterDir="false" />
+    <list default="true" id="98c320dc-abe4-43d2-a976-25d859d1cbbd" name="Changes" comment="create Counseling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elisoftProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/elisoftProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elisoftProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/elisoftProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,24 +36,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.elisoftProject.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "F:/Programing/Project/Web/elisoftProject/media",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.elisoftProject.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Programing/Project/Web/elisoftProject/media&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Programing\Project\Web\elisoftProject\media" />
@@ -148,7 +107,8 @@
       <updated>1713362929814</updated>
       <workItem from="1713362948701" duration="694000" />
       <workItem from="1713363655436" duration="1715000" />
-      <workItem from="1713365387484" duration="4899000" />
+      <workItem from="1713365387484" duration="5219000" />
+      <workItem from="1713422192858" duration="4381000" />
     </task>
     <task id="LOCAL-00001" summary="create project">
       <option name="closed" value="true" />
@@ -158,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713364065705</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="create Counseling">
+      <option name="closed" value="true" />
+      <created>1713370562326</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713370562326</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +134,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="create project" />
-    <option name="LAST_COMMIT_MESSAGE" value="create project" />
+    <MESSAGE value="create Counseling" />
+    <option name="LAST_COMMIT_MESSAGE" value="create Counseling" />
   </component>
 </project>
