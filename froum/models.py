@@ -1,21 +1,14 @@
 from django.db import models
 from account.models import CustomerUser
-
-
-class FroumCategory(models.Model):
-    name = models.CharField(max_length=350, verbose_name='عنوان دسته بندی')
-
-    class Meta:
-        verbose_name = 'دسته بندی انجمن'
-        verbose_name_plural = 'دسته های انجمن'
-
-    def __str__(self):
-        return self.name
-
+from ckeditor.fields import RichTextFormField
+from ckeditor_uploader.fields import RichTextUploadingField
+from django.utils.html import mark_safe
 
 class Froum(models.Model):
     froum_name = models.CharField(max_length=350, verbose_name='نام انجمن')
-    category = models.ForeignKey(FroumCategory, on_delete=models.CASCADE, verbose_name='', related_name='froum_cat')
+    logo = models.ImageField(upload_to='froum_logo', verbose_name='لوگوی انجمن')
+    alt = models.CharField(max_length=50, verbose_name='متن جایگزین لوگو')
+    title = models.CharField(max_length=75, verbose_name='عنوان لوگو')
 
     class Meta:
         verbose_name = 'انجمن'
@@ -24,9 +17,14 @@ class Froum(models.Model):
     def __str__(self):
         return self.froum_name
 
+    def forum_logo(self):
+        return mark_safe('<img src="/media/%s" width="70" height="70" />' % (self.logo))
+    forum_logo.short_description = 'لوگو'
+    forum_logo.allow_tags = True
+
 
 class Question(models.Model):
-    q = models.TextField(verbose_name='سوال')
+    q = RichTextUploadingField(config_name='special', verbose_name='سوال')
     title = models.CharField(max_length=1000, verbose_name='عنوان سوال')
     is_active = models.BooleanField(default=False, verbose_name='تاید / عدم تایید')
     user = models.ForeignKey(CustomerUser, on_delete=models.PROTECT, verbose_name='کاربر', related_name='question_user')

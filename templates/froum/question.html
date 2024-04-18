@@ -5,46 +5,156 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>الی سافت-انجمن ها</title>
+    <title>الی سافت-صفحه ورود</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Softland website template with Bootstrap 4">
     <meta name="keywords" content="bootstrap 4, premium, marketing, multipurpose">
     <meta content="AliNiyazi" name="author">
     <!-- css -->
-   {%include 'partial/header.html'  %}
-    <link href="{% static 'css/programmingCommunity.css' %}" rel="stylesheet" type="text/css">
+    {% include 'partial/header.html' %}
+    <link href="{% static 'css/forumQuestions.css' %}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
     <section class="bg-home-6"></section>
+    <!-- STRAT NAVBAR -->
+    <div id="navbar">
+        <nav style="background-color: transparent;"
+            class="navbar justify-content-center d-block container-fluid fixed-top navbar-custom " id="main-menu">
+            <div class="p-0 px-5 align-content-center justify-content-end row ">
 
+                <a title="" type="button" text="ورود" class="loginBtn mt-md-3 col-6 col-md-4 navbar-btn"></a>
+            </div>
+        </nav>
+    </div>
     <!-- END NAVBAR -->
     <!--START HOME-->
     <section>
-        <div class="programming_community_section container row align-items-center justify-content-center mx-auto s">
+
+        <section class="container row mx-auto forum_questions">
+            <div class="d-flex justify-content-around mt-5 pt-5 py-sm-3 forum_questions_header">
+                <h5 class="forum_questions_header_title">
+                    پرسش و پاسخ پایتون دانشگاه ملایر
+                </h5>
+                <h5 class="forum_questions_header_title">
+                    1,823 پرسش ثبت شده
+                </h5>
+            </div>
+            <hr>
             <div>
-                <h1 class="programming_community_title"> انجمن ها </h1>
-                <section class="d-flex justify-content-around align-items-center flex-wrap ">
-                 
-                    <a href="{% url 'forum:question' %}" class="programming_community_box">
-                        <header>
-                            <img src="/media/py.jpg" width="70" height="70">
-                        </header>
+                <div class="forum_questions_information">
+                    <p>
+                        در صورت عدم رعایت موارد زیر سوال شما حذف خواهد شد، لطفا به این موارد دقت نمایید:
+                    </p>
+                    <p>
+                        عنوان نامناسب سوال، سوالات نامربوط به دوره، سوالات نامربوط به بخش پرسش و پاسخ، سوالات بدون
+                        محتوا، سوالات تکراری
+                    </p>
+                </div>
+                <div class="d-flex flex-column flex-sm-row justify-content-around align-content-center mb-4">
+                    <input class="forum_questions_search" type="search" placeholder="دنبال چی میگردی؟">
+                    <a href="#" class="forum_questions_create_question btn btn-sm mt-2 mt-sm-0"> پرسش سوال </a>
+                </div>
+                <section>
+                    <a href="#" class="forum_questions_box">
+                        <img src="../image/HacAndSecurity.jpg" alt="">
                         <main>
-                            <h3 class="programming_community_box_title"> پایتون </h3>
+                            <h4 class="forum_questions_box_title"> چاپ فارسی </h4>
+                            <ul class="flex-sm-row">
+                                <li> دوره پایتون دانشگاه ملایر </li>
+                                <li> 1403/01/19 </li>
+                                <li> تعداد پاسخ : 5 </li>
+                            </ul>
                         </main>
                     </a>
-                    <a href="#" class="programming_community_box">
-                        <header>
-                             <img src="/media/flutt.png" width="70" height="70">
-                        </header>
+                    <a href="#" class="forum_questions_box">
+                        <img src="../image/HacAndSecurity.jpg" alt="">
                         <main>
-                            <h3 class="programming_community_box_title"> فلاتر </h3>
+                            <h4 class="forum_questions_box_title"> چاپ فارسی </h4>
+                            <ul class="flex-sm-row">
+                                <li> دوره پایتون دانشگاه ملایر </li>
+                                <li> 1403/01/19 </li>
+                                <li> تعداد پاسخ : 5 </li>
+                            </ul>
+                        </main>
+                    </a>
+                    <a href="#" class="forum_questions_box">
+                        <img src="../image/HacAndSecurity.jpg" alt="">
+                        <main>
+                            <h4 class="forum_questions_box_title"> چاپ فارسی </h4>
+                            <ul class="flex-sm-row">
+                                <li> دوره پایتون دانشگاه ملایر </li>
+                                <li> 1403/01/19 </li>
+                                <li> تعداد پاسخ : 5 </li>
+                            </ul>
+                        </main>
+                    </a>
+                    <a href="#" class="forum_questions_box">
+                        <img src="../image/HacAndSecurity.jpg" alt="">
+                        <main>
+                            <h4 class="forum_questions_box_title"> چاپ فارسی </h4>
+                            <ul class="flex-sm-row">
+                                <li> دوره پایتون دانشگاه ملایر </li>
+                                <li> 1403/01/19 </li>
+                                <li> تعداد پاسخ : 5 </li>
+                            </ul>
+                        </main>
+                    </a>
+                    <a href="#" class="forum_questions_box">
+                        <img src="../image/HacAndSecurity.jpg" alt="">
+                        <main>
+                            <h4 class="forum_questions_box_title"> چاپ فارسی </h4>
+                            <ul class="flex-sm-row">
+                                <li> دوره پایتون دانشگاه ملایر </li>
+                                <li> 1403/01/19 </li>
+                                <li> تعداد پاسخ : 5 </li>
+                            </ul>
+                        </main>
+                    </a>
+                    <a href="#" class="forum_questions_box">
+                        <img src="../image/HacAndSecurity.jpg" alt="">
+                        <main>
+                            <h4 class="forum_questions_box_title"> چاپ فارسی </h4>
+                            <ul class="flex-sm-row">
+                                <li> دوره پایتون دانشگاه ملایر </li>
+                                <li> 1403/01/19 </li>
+                                <li> تعداد پاسخ : 5 </li>
+                            </ul>
+                        </main>
+                    </a>
+                    <a href="#" class="forum_questions_box">
+                        <img src="../image/HacAndSecurity.jpg" alt="">
+                        <main>
+                            <h4 class="forum_questions_box_title"> چاپ فارسی </h4>
+                            <ul class="flex-sm-row">
+                                <li> دوره پایتون دانشگاه ملایر </li>
+                                <li> 1403/01/19 </li>
+                                <li> تعداد پاسخ : 5 </li>
+                            </ul>
                         </main>
                     </a>
                 </section>
             </div>
-        </div>
+        </section>
+        <section dir="ltr" class="d-flex justify-content-center mb-5">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
     </section>
     <!--END HOME-->
     <!-- Information -->
@@ -179,7 +289,7 @@
         </section>
     </footer>
     <!-- javascript -->
-    {%include 'partial/footer.html'  %}
+    {% include 'partial/footer.html'  %}
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.shortcuts import render, redirect
 from django.views import View
 
@@ -55,3 +55,9 @@ class RegisterView(View):
         else:
             messages.error(request, 'اطلاعات وارد شده معتبر نمی باشد.')
             return redirect(to='account:login')
+
+
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect(to='main:index')

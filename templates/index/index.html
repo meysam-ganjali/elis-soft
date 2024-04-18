@@ -12,7 +12,7 @@
     <meta content="AliNiyazi" name="author">
     <!-- css -->
 
-   
+
     {% include 'partial/header.html' %}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
@@ -21,12 +21,14 @@
 <section id="ViewAnimation"></section>
 <section class="bg-home-6"></section>
 <div id="navbar">
+
     <nav style="background-color: transparent;"
          class="navbar justify-content-center d-block container-fluid fixed-top navbar-custom " id="main-menu">
         <div class="px-5 align-content-center justify-content-end row">
             <a href="{% url 'forum:home' %}" text="ورود به انجمن"
                class="loginBtn mt-md-3 col-6 col-md-4 navbar-btn mx-1"> </a>
-        </div>
+            <a href="{% url 'account:logout' %}" text="jhhhh"
+            class="loginBtn mt-md-3 col-6 col-md-4 navbar-btn mx-1"> </a>        </div>
     </nav>
 </div>
 <section>
@@ -64,7 +66,7 @@
                                            class="form-control text-white pe-0 btn btn-danger font-size-24 rounded-2">
                                 </div>
                             </section>
-                            
+
                         </form>
                         <div class="mt-md-5 pt-md-4 justify-content-around row">
                             <h3 class="text-center pt-3 text-light title-body">
