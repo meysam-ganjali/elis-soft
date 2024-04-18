@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="98c320dc-abe4-43d2-a976-25d859d1cbbd" name="Changes" comment="create Counseling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elisoftProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/elisoftProject/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +107,7 @@
       <workItem from="1713362948701" duration="694000" />
       <workItem from="1713363655436" duration="1715000" />
       <workItem from="1713365387484" duration="5219000" />
-      <workItem from="1713422192858" duration="4381000" />
+      <workItem from="1713422192858" duration="6447000" />
     </task>
     <task id="LOCAL-00001" summary="create project">
       <option name="closed" value="true" />
