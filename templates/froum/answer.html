@@ -12,7 +12,7 @@
     <meta content="AliNiyazi" name="author">
     <!-- css -->
     {% include 'partial/header.html' %}
-    <link href="{% static 'css/forumQuestions.css' %}" rel="stylesheet" type="text/css">
+    <link href=" {% static 'css/detailsQuestions.css' %}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -30,68 +30,86 @@
 <!-- END NAVBAR -->
 <!--START HOME-->
 <section>
+    <section class="container-fluid container-md row mx-auto details_Question py-5">
+        <h1 class="details_Question_title">{{ question.title }} </h1>
+        <!-- Copy Link Page -->
 
-    <section class="container row mx-auto forum_questions">
-        <div class="d-flex justify-content-around mt-5 pt-5 py-sm-3 forum_questions_header">
-            <h5 class="forum_questions_header_title">
-                پرسش و پاسخ پایتون دانشگاه ملایر
-            </h5>
-            <h5 class="forum_questions_header_title">
-                1,823 پرسش ثبت شده
-            </h5>
-        </div>
-        <hr>
-        <div>
-            <div class="forum_questions_information">
-                <p>
-                    در صورت عدم رعایت موارد زیر سوال شما حذف خواهد شد، لطفا به این موارد دقت نمایید:
-                </p>
-                <p>
-                    عنوان نامناسب سوال، سوالات نامربوط به دوره، سوالات نامربوط به بخش پرسش و پاسخ، سوالات بدون
-                    محتوا، سوالات تکراری
-                </p>
+        <!--? Question -->
+        <section>
+            <div class="details_Question_box">
+                <header>
+                    <h5 class="details_Question_box_date"> {{ question.register_date }} </h5>
+                </header>
+                <hr class="my-3">
+                <main>
+                    <div>
+                        <h2 class="details_Question_box_title"> {{ question.title }} </h2>
+                        <p>
+                            {{ question.q | safe }}
+                        </p>
+                    </div>
+                </main>
+                {#                    <footer>#}
+                {#                        <img src="../image/HacAndSecurity.jpg" alt="" title="">#}
+                {#                    </footer>#}
             </div>
-            <div class="d-flex flex-column flex-sm-row justify-content-around align-content-center mb-4">
-                <input class="forum_questions_search" type="search" placeholder="دنبال چی میگردی؟">
-                <a href="#" class="forum_questions_create_question btn btn-sm mt-2 mt-sm-0"> پرسش سوال </a>
-            </div>
-            <section>
-                {% for q in question_lst %}
-                    <a href="{% url 'forum:answer' q.id %}" class="forum_questions_box">
-                        {#                        <img src="../image/HacAndSecurity.jpg" alt="">#}
-                        <main>
-                            <h4 class="forum_questions_box_title"> {{ q.title }} </h4>
-                            <ul class="flex-sm-row">
-                                <li> {{ q.user.name }} {{ q.user.family }}</li>
-                                <li> {{ q.register_date }}</li>
-                                <li> تعداد پاسخ : 5</li>
+        </section>
+        <!--! Answers -->
+        {% for a in answer_lst %}
+            <section class="details_question_answers pt-4">
+                <div class="details_question_answers_box flex-sm-nowrap align-items-sm-start ">
+                    <!-- image -->
+                    <div>
+                        {#                        <img src="../image/HacAndSecurity.jpg" alt="" title="">#}
+                        <h1 class="details_question_answers_box_title"> {{ a.user.name }} {{ a.user.family }} </h1>
+                    </div>
+                    <div class="details_question_answers_box_main">
+                        <header>
+                            <ul>
+                                <li> {{ a.register_date }} </li>
+                                {#                                <li>#}
+                                {#                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"#}
+                                {#                                        class="details_question_answers_box_icon text-warning ">#}
+                                {#                                        <path#}
+                                {#                                            d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-12.15 12.15a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32L19.513 8.2Z" />#}
+                                {#                                    </svg>#}
+                                {#                                </li>#}
+                                {#                                <li>#}
+                                {#                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"#}
+                                {#                                        class="details_question_answers_box_icon text-danger">#}
+                                {#                                        <path fill-rule="evenodd"#}
+                                {#                                            d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z"#}
+                                {#                                            clip-rule="evenodd" />#}
+                                {#                                    </svg>#}
+                                {#                                </li>#}
                             </ul>
+                        </header>
+                        <main>
+                            <p>
+                                {{ a.answer | safe }}
+                            </p>
+
                         </main>
-                    </a>
-                {% endfor %}
-
-
+                    </div>
+                </div>
             </section>
-        </div>
-    </section>
-    <section dir="ltr" class="d-flex justify-content-center mb-5">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        {% endfor %}
+
+        <!--? create answers -->
+        <section class="details_question_answers_form">
+            <header>
+                <h3 class="text-info details_question_answers_form_title"> افزودن پاسخ جدید </h3>
+            </header>
+            <hr class="mt-2 mb-4">
+            <form action="{% url 'forum:answer' question.id %}" method="post">
+                {% csrf_token %}
+                {{ answer_frm }}
+                <input type="hidden" name="question_id" value="{{ question.id }}">
+
+
+                <button id="btn_add_ans" class="btn btn-success mt-2" type="submit"> ثبت پاسخ شما</button>
+            </form>
+        </section>
     </section>
 </section>
 <!--END HOME-->
@@ -229,5 +247,4 @@
 <!-- javascript -->
 {% include 'partial/footer.html' %}
 </body>
-
 </html>

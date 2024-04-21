@@ -1706,3 +1706,7 @@ footer .map p strong:last-of-type {
     height: 38px;
   }
 }
+.ck-content{
+  height: 200px;
+  color:black;
+}

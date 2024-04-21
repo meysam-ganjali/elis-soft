@@ -125,6 +125,7 @@ USE_TZ = True
 CKEDITOR_UPLOAD_PATH = 'ckeditor/upload_files/'
 CKEDITOR_STORAGE_BACKEND = 'django.core.files.storage.FileSystemStorage'
 CKEDITOR_CONFIGS = {
+
     'default': {
         'toolbar': 'Custom',
         'toolbar_Custom': [
