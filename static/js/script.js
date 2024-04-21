@@ -287,31 +287,36 @@ $(document).ready(function () {
 });
 
 
+CKEDITOR.replace('id_answer', {
+    contentsLangDirection: 'rtl',
+    language: 'fa',
+    toolbar: [
+        {name: 'document', items: ['Source']}, // افزودن دکمه Source به نوار ابزار
+        {name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
+        {name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize']},
+        {
+            name: 'basicstyles',
+            items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']
+        },
+        {name: 'colors', items: ['TextColor', 'BGColor']},
+        {
+            name: 'paragraph',
+            items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv']
+        },
+        {name: 'links', items: ['Link', 'Unlink']},
+        {name: 'insert', items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar']},
+        {name: 'tools', items: ['Maximize']} // افزودن دکمه Maximize به تولبار
+    ],
+});
 
- CKEDITOR.replace('id_answer', {
-        contentsLangDirection: 'rtl',
-        language: 'fa',
-        toolbar: [
-           { name: 'document', items: ['Source'] }, // افزودن دکمه Source به نوار ابزار
-                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },
-                { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
-                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'] },
-                { name: 'colors', items: ['TextColor', 'BGColor'] },
-                { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv'] },
-                { name: 'links', items: ['Link', 'Unlink'] },
-                { name: 'insert', items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar'] },
-                { name: 'tools', items: ['Maximize'] } // افزودن دکمه Maximize به تولبار
-        ],
-    });
-
-    function getEditorContent() {
-        var editor = CKEDITOR.instances.editor1;
-        var content = editor.getData();
-        console.log(content);
-    }
+function getEditorContent() {
+    var editor = CKEDITOR.instances.editor1;
+    var content = editor.getData();
+    console.log(content);
+}
 
 
-    $(document).ready(function () {
+$(document).ready(function () {
     $("#btn_add_ans").submit(function (event) {
         var answer = document.getElementById('answer').value;
         var phone = document.getElementById('txt_phone').value;
@@ -335,4 +340,26 @@ $(document).ready(function () {
 
     });
 
+});
+
+CKEDITOR.replace('id_q', {
+    contentsLangDirection: 'rtl',
+    language: 'fa',
+    toolbar: [
+        {name: 'document', items: ['Source']}, // افزودن دکمه Source به نوار ابزار
+        {name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']},
+        {name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize']},
+        {
+            name: 'basicstyles',
+            items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat']
+        },
+        {name: 'colors', items: ['TextColor', 'BGColor']},
+        {
+            name: 'paragraph',
+            items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv']
+        },
+        {name: 'links', items: ['Link', 'Unlink']},
+        {name: 'insert', items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar']},
+        {name: 'tools', items: ['Maximize']} // افزودن دکمه Maximize به تولبار
+    ],
 });

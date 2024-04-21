@@ -27,8 +27,11 @@
         <div class="px-5 align-content-center justify-content-end row">
             <a href="{% url 'forum:home' %}" text="ورود به انجمن"
                class="loginBtn mt-md-3 col-6 col-md-4 navbar-btn mx-1"> </a>
-            <a href="{% url 'account:logout' %}" text="jhhhh"
-            class="loginBtn mt-md-3 col-6 col-md-4 navbar-btn mx-1"> </a>        </div>
+            {% if user.is_authenticated %}
+            	  <a href="{% url 'account:logout' %}" text="خروج"
+            class="loginBtn mt-md-3 col-6 col-md-4 navbar-btn mx-1"> </a>
+            {% endif %} 
+        </div>
     </nav>
 </div>
 <section>

@@ -22,9 +22,40 @@ class FroumAdmin(admin.ModelAdmin):
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('q',)
+    def active_q(modeladmin, request, queryset):
+        res = queryset.update(is_active=True)
+        message = f'تعداد {res} پاسخ فعال شد'
+        modeladmin.message_user(request, message)
+
+    def de_active_q(modeladmin, request, queryset):
+        res = queryset.update(is_active=False)
+        message = f'تعداد {res} پاسخ غیرفعال شد'
+        modeladmin.message_user(request, message)
+
+    list_display = ('title', 'is_active', 'register_date', 'user')
+    list_editable = ('is_active',)
+    actions = ['active_q', 'de_active_q']
+
+    active_q.short_description = 'فعال سازی پاسخ انتخابی'
+    de_active_q.short_description = 'غیرفعال سازی پاسخ انتخابی'
 
 
 @admin.register(Answer)
 class AnswerAdmin(admin.ModelAdmin):
-    pass
+    def active_a(modeladmin, request, queryset):
+        res = queryset.update(is_active=True)
+        message = f'تعداد {res} سوال فعال شد'
+        modeladmin.message_user(request, message)
+
+    def de_active_a(modeladmin, request, queryset):
+        res = queryset.update(is_active=False)
+        message = f'تعداد {res} سوال غیرفعال شد'
+        modeladmin.message_user(request, message)
+
+    list_display = ('id', 'answer', 'register_date', 'user', 'is_active')
+    list_editable = ('is_active',)
+    actions = ['active_q', 'de_active_q']
+
+    active_a.short_description = 'فعال سازی سوالات انتخابی'
+    de_active_a.short_description = 'غیرفعال سازی سوالات انتخابی'
+

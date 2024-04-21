@@ -16,7 +16,8 @@ class IndexView(View):
     def get(self, request):
         counseling_form = CounselingForm()
         return render(request, 'index/index.html', {
-            'counseling_form': counseling_form
+            'counseling_form': counseling_form,
+            'user': request.user
         })
 
     def post(self, request):
